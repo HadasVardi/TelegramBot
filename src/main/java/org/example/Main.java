@@ -14,6 +14,6 @@ public class Main {
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
         Bot bot = new Bot();
         botsApi.registerBot(bot);
-        bot.sendText(677498390L, "app is running!");  //The L just turns the Integer into a Long
+      //  bot.sendText(677498390L, "app is running!");  //The L just turns the Integer into a Long
     }
 }

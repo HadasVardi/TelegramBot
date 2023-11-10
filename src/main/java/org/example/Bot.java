@@ -56,7 +56,7 @@ public class Bot extends TelegramLongPollingBot{
         return botUsername;
     }
 
-    void sendText(Long who, String what){
+    private void sendText(Long who, String what){
         SendMessage sm = SendMessage.builder()
                 .chatId(who.toString()) //  Who are we sending a message to
                 .text(what).build();    //  Message content
