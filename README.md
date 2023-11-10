@@ -69,8 +69,9 @@ This project is built using Maven, and the following dependencies are specified 
 - Once you have found the bot in the search results, click on its username.
   This will open the bot's profile.
 - Click the "Start" button at the bottom of the screen to initiate a conversation with the bot.
-- Set a language by using the following text in the bot chat "set language [language]". 
+- Set a language by using the following text in the bot chat 'set language [language]'. 
 - Choose a joke number by typing a number in range 1-101.
+- You can change the language at any point by entering the instruction 'set language [language].' "
 
 ## Commands
 
