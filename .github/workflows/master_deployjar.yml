@@ -4,7 +4,7 @@
 name: Build and deploy JAR app to Azure Web App - DeployJar
 
 env: # Or as an environment variable
-      APP_CONFIGURATION_CONNECTUIN_STRING: ${{ secrets.APP_CONFIGURATION_CONNECTION_STRING }}
+      APP_CONFIGURATION_CONNECTION_STRING: ${{ secrets.APP_CONFIGURATION_CONNECTION_STRING }}
 
 on:
   push:
