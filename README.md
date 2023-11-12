@@ -68,7 +68,7 @@ This project is built using Maven, and the following dependencies are specified 
 
 Make sure you have the following prerequisite installed before running the code:
 
-[Java Runtime Environment (JRE)](https://www.oracle.com/java/technologies/downloads/#java8) (Version 8 or higher): Your code is compiled and intended to run with the Java Runtime Environment. Please install the JRE before attempting to execute the program.
+- [Java Runtime Environment (JRE)](https://www.oracle.com/java/technologies/downloads/#java8) (Version 8 or higher): Your code is compiled and intended to run with the Java Runtime Environment. Please install the JRE before attempting to execute the program.
 
 ## Getting Started
 To get started, follow these steps to run the code using the provided JAR file:
