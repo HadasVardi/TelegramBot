@@ -6,7 +6,9 @@ Telegram Bot that tells 101 different Chuck Norris jokes in any language set by 
 
 ## Table of Contents
 
+- [Prerequisites](#prerequisites)
 - [Dependencies](#dependencies)
+- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Commands](#commands)
 - [Configuration](#configuration)
@@ -60,6 +62,28 @@ This project is built using Maven, and the following dependencies are specified 
 
 
 </dependencies>
+```
+
+## Prerequisites
+
+Make sure you have the following prerequisite installed before running the code:
+
+[Java Runtime Environment (JRE)](https://www.oracle.com/java/technologies/downloads/#java8) (Version 8 or higher): Your code is compiled and intended to run with the Java Runtime Environment. Please install the JRE before attempting to execute the program.
+
+## Getting Started
+To get started, follow these steps to run the code using the provided JAR file
+
+- Open the command prompt (CMD) and navigate to the Project Directory where you downloaded the project. For example:
+```bash
+cd path/to/your/project
+```
+- From the project directory, navigate to the directory where the JAR file is located:
+```bash
+cd out/artifacts/TelegramBot_jar
+```
+- Execute the following command to run the JAR file:
+```bash
+java -jar TelegramBot.jar
 ```
 
 ## Usage
