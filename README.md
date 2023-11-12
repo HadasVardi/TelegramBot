@@ -71,7 +71,7 @@ Make sure you have the following prerequisite installed before running the code:
 [Java Runtime Environment (JRE)](https://www.oracle.com/java/technologies/downloads/#java8) (Version 8 or higher): Your code is compiled and intended to run with the Java Runtime Environment. Please install the JRE before attempting to execute the program.
 
 ## Getting Started
-To get started, follow these steps to run the code using the provided JAR file
+To get started, follow these steps to run the code using the provided JAR file:
 
 - Open the command prompt (CMD) and navigate to the Project Directory where you downloaded the project. For example:
 ```bash
