@@ -103,11 +103,12 @@ java -jar TelegramBot.jar
 
 ## Configuration
 
-1. Create a new bot on Telegram and get the API token.
-2. Copy the token to the configuration file (`config.properties`).
-3. Create Azure AI Translator resource.
-4. Copy the Azure tokens (key, endpoint and location) to the configuration file (`config.properties`).
+This project uses a configuration file located at `src/main/resources/config.properties`. Below are the configurable parameters:
 
+- `AZURE_KEY`: API key for Azure Translator service authentication (required).
+- `AZURE_ENDPOINT`: The URL of the Azure Translator service (required).
+- `AZURE_LOCATION`: The region where the Azure Translator service is stored.
+- `BOT_TOKEN`: API key used for authentication with the Telegram Bot API (required).
 
 ## Contributing
 
