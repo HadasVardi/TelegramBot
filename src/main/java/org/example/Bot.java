@@ -15,6 +15,9 @@ public class Bot extends TelegramLongPollingBot{
             " Choose your favorite language by typing \"set language [Spanish, for example]\". " +
             "Then type a number between 1 to 101 to get your joke!";
 
+    private static final String botSTart= "Choose the language you want the joke in by typing \"set language [language]\". " +
+            "Then type a number between 1 to 101 to get your joke!";
+
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
@@ -106,6 +109,9 @@ public class Bot extends TelegramLongPollingBot{
     private void checkIfUserSentValidCommand(String msg, long chatId) {
         if (msg.equals("/description")) {
             sendText(chatId, botDesription);
+        }
+        else if (msg.equals("/start")) {
+            sendText(chatId, botSTart);
         }
         else {
             sendText(chatId, "Invalid Command");
