@@ -9,12 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TextServices {
+
+    public static Map<String,String> languageToCodeLanguageMap;
     public static boolean isvalidCommand(String text){
         return (text.startsWith("set language ") && !text.substring("set language ".length()).isEmpty());
     }
 
     public static boolean canTranslateToLanguage(String language) {
-        return Main.languageToCodeLanguageMap.containsKey((language));
+        return languageToCodeLanguageMap.containsKey((language));
     }
 
     public static String getLanguageFromCommand(String command) {
@@ -22,7 +24,7 @@ public class TextServices {
     }
 
     public static String getLanguageCode(String language) {
-        return Main.languageToCodeLanguageMap.get(language);
+        return languageToCodeLanguageMap.get(language);
     }
 
     public static String getTranslatedJoke(String indexString, String targetLanguage, TranslateServices translateRequest) {

@@ -6,10 +6,10 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import java.util.Map;
 
 public class Main {
-    public static Map<String,String> languageToCodeLanguageMap;
+
 
     public static void main(String[] args) throws TelegramApiException {
-        languageToCodeLanguageMap=TextServices.createLanguageToCodeLanguageMap();
+        TextServices.languageToCodeLanguageMap=TextServices.createLanguageToCodeLanguageMap();
         ChuckNorrisJokeScraper.initChuckNorrisJoke();
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
         Bot bot = new Bot();
