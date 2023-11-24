@@ -14,7 +14,6 @@ public class TranslateServices {
     private Properties config;
     private OkHttpClient client;
     public TranslateServices() {
-        config = ConfigReader.getConfig();
         client = new OkHttpClient();
     }
 
@@ -25,9 +24,14 @@ public class TranslateServices {
 
     // This function performs a POST request.
     private String Post(String text, String targetLanguage) {
-        String key=config.getProperty("AZURE_KEY");
-        String endpoint=config.getProperty("AZURE_ENDPOINT");
-        String location=config.getProperty("AZURE_LOCATION");
+
+      //  String key=config.getProperty("AZURE_KEY");
+      //  String endpoint=config.getProperty("AZURE_ENDPOINT");
+      //  String location=config.getProperty("AZURE_LOCATION");
+
+        String key=System.getenv("AZURE_KEY");
+        String endpoint=System.getenv("AZURE_ENDPOINT");
+        String location=System.getenv("AZURE_LOCATION");
 
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType, "[{\"Text\": \""+text+"\"}]");
