@@ -1,12 +1,10 @@
 package org.example;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.json.JSONObject;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import okhttp3.*;
 
 public class TextServices {
 
@@ -54,6 +52,8 @@ public class TextServices {
         return Integer.parseInt(text);
     }
 
+
+    /* //scraping - instead, init a map from language name to iso language code
      static Map<String,String> createLanguageToCodeLanguageMap(){
         String url = "https://learn.microsoft.com/en-us/azure/ai-services/translator/language-support";
         Map<String, String> languageMap = new HashMap<>();
@@ -75,4 +75,46 @@ public class TextServices {
         }
         return languageMap;
     }
+     */
+
+
+    // This function performs a GET request.
+    public static void initLanuageNameToISOCodeMap() {
+        String key=System.getenv("AZURE_KEY");
+        String endpoint=System.getenv("AZURE_ENDPOINT");
+        String apiUrl= endpoint+"/languages?api-version=3.0&scope=translation";
+
+        // Create OkHttpClient
+        OkHttpClient client = new OkHttpClient();
+
+        // Build the request
+        Request request = new Request.Builder()
+                .url(apiUrl)
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Ocp-Apim-Subscription-Key", key)
+                .build();
+
+        // Execute the request
+        try (Response response = client.newCall(request).execute()) {
+            extractHttpResponseTOMap(response.body().string());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void extractHttpResponseTOMap(String httpResponse) {
+        languageToCodeLanguageMap= new HashMap<>();
+        JSONObject jsonObject = new JSONObject(httpResponse);
+
+        // Get the "translation" object
+        JSONObject translationObject = jsonObject.getJSONObject("translation");
+
+        // Create the map
+        for (String key : translationObject.keySet()) {
+            JSONObject innerObject = translationObject.getJSONObject(key);
+            String name = innerObject.getString("name").toLowerCase();
+            languageToCodeLanguageMap.put(name, key);
+        }
+    }
+
 }

@@ -61,7 +61,12 @@ This project is built using Maven, and the following dependencies are specified 
         <version>20210307</version> 
     </dependency>
 
-
+    <dependency>
+        <groupId>com.azure</groupId>
+        <artifactId>azure-ai-textanalytics</artifactId>
+        <version>5.2.0</version>
+    </dependency>
+    
 </dependencies>
 ```
 

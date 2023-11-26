@@ -1,7 +1,6 @@
 package org.example;
 
 import java.io.IOException;
-import java.util.Properties;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -11,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class TranslateServices {
-    private Properties config;
+
     private OkHttpClient client;
     public TranslateServices() {
         client = new OkHttpClient();
@@ -24,11 +23,6 @@ public class TranslateServices {
 
     // This function performs a POST request.
     private String Post(String text, String targetLanguage) {
-
-      //  String key=config.getProperty("AZURE_KEY");
-      //  String endpoint=config.getProperty("AZURE_ENDPOINT");
-      //  String location=config.getProperty("AZURE_LOCATION");
-
         String key=System.getenv("AZURE_KEY");
         String endpoint=System.getenv("AZURE_ENDPOINT");
         String location=System.getenv("AZURE_LOCATION");
@@ -50,6 +44,7 @@ public class TranslateServices {
             return "An unexpected error occurred. Please try again.";
         }
     }
+
 
     // This function extracts the translated text from httpResponse
      private static String extractTranslatedText(String httpResponse) {

@@ -9,13 +9,13 @@ import java.util.*;
 public class Bot extends TelegramLongPollingBot{
     private Map<Long, String> userStates = new HashMap<>();  // User states (language selection) to track conversation progress
     private TranslateServices translateRequest = new TranslateServices();
-    public static String botUsername="TellChuckNorrisJokesBot";
+    public static String botUsername= "TellChuckNorrisJokesBot";
 
     private static final String botDesription= "This bot tells 101 different Chuck Norris jokes in any language." +
             " Choose your favorite language by typing \"set language [Spanish, for example]\". " +
             "Then type a number between 1 to 101 to get your joke!";
 
-    private static final String botSTart= "Choose the language you want the joke in by typing \"set language [language]\". " +
+    private static final String botStart= "Choose the language you want the joke in by typing \"set language [language]\". " +
             "Then type a number between 1 to 101 to get your joke!";
 
     @Override
@@ -52,7 +52,6 @@ public class Bot extends TelegramLongPollingBot{
     @Override
     public String getBotToken() {
         return System.getenv("BOT_TOKEN");
-   //     return ConfigReader.getConfig().getProperty("BOT_TOKEN");
     }
 
     @Override
@@ -112,7 +111,7 @@ public class Bot extends TelegramLongPollingBot{
             sendText(chatId, botDesription);
         }
         else if (msg.equals("/start")) {
-            sendText(chatId, botSTart);
+            sendText(chatId, botStart);
         }
         else {
             sendText(chatId, "Invalid Command");
